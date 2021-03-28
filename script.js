@@ -242,6 +242,7 @@ const DarkMode = {
   footer: document.querySelector("footer"),
   modal: document.querySelector("div.modal"),
   modalH2: document.querySelector("#form h2"),
+  modalHelp: document.querySelector("small.help"),
 
   addDarkClass: (buttonElement) => {
     DarkMode.ths.forEach((th) => {
@@ -269,6 +270,7 @@ const DarkMode = {
     DarkMode.footer.style.color = "#969cb3";
     DarkMode.modal.style.backgroundColor = "#181818";
     DarkMode.modalH2.style.color = "#f0f2f5";
+    DarkMode.modalHelp.style.color = "white"
 
     DarkMode.addDarkClass(buttonElement);
   },
@@ -279,6 +281,8 @@ const DarkMode = {
     DarkMode.footer.style.color = "#363f5f";
     DarkMode.modal.style.backgroundColor = "#f0f2f5";
     DarkMode.modalH2.style.color = "#363f5f";
+    DarkMode.modalHelp.style.color = "black";
+    DarkMode.modalHelp.style.opacity = "0.4";
 
     DarkMode.removeDarkClass(buttonElement);
   },
@@ -286,10 +290,10 @@ const DarkMode = {
   changeTheme: (buttonElement) => {
     if (buttonElement.classList.contains("active")) {
       DarkMode.lightMode(buttonElement);
-      App.reload()
+      App.reload();
     } else {
       DarkMode.darkMode(buttonElement);
-      App.reload()
+      App.reload();
     }
   },
 };
